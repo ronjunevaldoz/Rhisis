@@ -25,6 +25,7 @@ namespace Rhisis.Core.Resources
         private ConcurrentDictionary<int, JobData> _jobs;
         private ConcurrentDictionary<string, NpcData> _npcs;
         private ConcurrentDictionary<int, IQuestScript> _quests;
+        private ConcurrentDictionary<int, SkillData> _skills;
         private ExpTableData _expTableData;
         private DeathPenalityData _penalities;
 
@@ -54,6 +55,9 @@ namespace Rhisis.Core.Resources
 
         /// <inheritdoc />
         public IReadOnlyDictionary<int, IQuestScript> Quests => this.GetCacheValue(GameResourcesConstants.Quests, ref this._quests);
+
+        /// <inheritdoc />
+        public IReadOnlyDictionary<int, SkillData> Skills => this.GetCacheValue(GameResourcesConstants.Skills, ref this._skills);
 
         /// <inheritdoc />
         public ExpTableData ExpTables => this.GetCacheValue(GameResourcesConstants.ExpTables, ref this._expTableData);
